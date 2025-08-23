@@ -1,0 +1,22 @@
+{
+  "name": "@repo/db",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "db:generate": "prisma generate",
+    "db:migrate": "prisma migrate dev --skip-generate",
+    "db:deploy": "echo 'Add deploy script here'",
+    "db:studio": "prisma studio"
+  },
+  "devDependencies": {
+    "@workspace/eslint-config": "workspace:*",
+    "@workspace/typescript-config": "workspace:*",
+    "prisma": "^6.14.0"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.14.0"
+  },
+  "exports": {
+    ".": "./src/index.ts"
+  }
+}
