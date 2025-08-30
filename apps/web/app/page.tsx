@@ -1,13 +1,17 @@
-import { Button } from "@workspace/ui/components/button";
 import { auth } from "@workspace/auth/server";
 import { headers } from "next/headers";
 import Link from "next/link";
 import { LogoutButton } from "@/components/logout-button";
+import { Card, CardContent } from "@workspace/ui/components/card";
 
 export default async function Page() {
   const session = await auth.api.getSession({
     headers: await headers(),
   });
+
+  const data = await fetch("http://localhost:3001/hello");
+  const res = await data.json();
+  console.log(res.data);
 
   return (
     <div className="flex items-center justify-center min-h-svh">
@@ -20,7 +24,9 @@ export default async function Page() {
         ) : (
           <Link href="/login">Login</Link>
         )}
-        <Button size="sm">Button</Button>
+        <Card>
+          <CardContent>{JSON.stringify(res, null, 2)}</CardContent>
+        </Card>
       </div>
     </div>
   );

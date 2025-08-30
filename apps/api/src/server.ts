@@ -6,8 +6,12 @@ const app = express();
 app.use(cors());
 const PORT = process.env.PORT || 3001;
 
-app.get("/", (req, res) => {
-  res.send("Hello raza!");
+app.get("/", (_, res) => {
+  res.send({ data: "Index route!" });
+});
+
+app.get("/hello", (_, res) => {
+  res.send({ data: "Hello ali!" });
 });
 
 app.listen(PORT, () => {
