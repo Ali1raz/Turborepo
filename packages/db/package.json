@@ -1,5 +1,5 @@
 {
-  "name": "@repo/db",
+  "name": "@workspace/db",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -14,7 +14,9 @@
     "prisma": "^6.14.0"
   },
   "dependencies": {
-    "@prisma/client": "^6.14.0"
+    "@prisma/client": "^6.14.0",
+    "@t3-oss/env-nextjs": "^0.13.8",
+    "zod": "^3.25.76"
   },
   "exports": {
     ".": "./src/index.ts"
