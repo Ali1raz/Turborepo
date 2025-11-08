@@ -7,7 +7,7 @@
     "prepare": "husky",
     "dev": "turbo dev",
     "lint": "turbo lint",
-    "format": "prettier --check --write \"**/*.{ts,tsx,md}\""
+    "format": "prettier --write --check \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
     "@workspace/eslint-config": "workspace:*",
