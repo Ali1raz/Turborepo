@@ -4,18 +4,26 @@
   "private": true,
   "scripts": {
     "build": "turbo build",
+    "prepare": "husky",
     "dev": "turbo dev",
     "lint": "turbo lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "prettier --check --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
     "@workspace/eslint-config": "workspace:*",
     "@workspace/typescript-config": "workspace:*",
     "prettier": "^3.6.2",
     "turbo": "^2.5.5",
-    "typescript": "5.7.3"
+    "typescript": "5.7.3",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.2"
   },
   "packageManager": "pnpm@10.15.0",
+  "lint-staged": {
+    "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}": [
+      "prettier --check ."
+    ]
+  },
   "engines": {
     "node": ">=20"
   }
